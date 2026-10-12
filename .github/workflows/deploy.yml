@@ -2,6 +2,10 @@ name: Build and deploy site
 on:
   push:
     branches: [main]
+  # Tuesday 16:45 UTC is 11:45 AM EST and 12:45 PM EDT, so the rebuild
+  # always lands after the 11:30 AM America/New_York publish time.
+  schedule:
+    - cron: "45 16 * * 2"
   workflow_dispatch:
 permissions:
   contents: read

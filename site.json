@@ -3,67 +3,58 @@
   "brand": "6 String Creative",
   "base": "https://podcast.6stringcreative.com",
   "theme_color": "#111f32",
-  "desc": "Honest, practical marketing conversations for small business owners who want to grow without losing their minds.",
+  "tagline": "Five-minute marketing fixes for small business owners, every Tuesday.",
+  "desc": "Marketing Tune-Up is a quick weekly show for small business owners trying to navigate the complex world of marketing. Each episode, Dan and Kate take one topic, like your Google Business Profile, reviews, photos, AI search, social media or ads, and break it down in about five minutes. You get what the latest research says, what actually works, and one simple fix you can make this week. Every stat is real and credited, the advice is practical, and the hosts are delightfully, openly AI. New episodes every Tuesday from 6 String Creative.",
   "font_url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@500;700;800&display=swap",
-  "logo": "https://cloud-1de12d.becdn.net/media/original/d74c6fce1ecb6034b42393fc7db41541/6sc-Logo-Blue-White.png",
-  "nav": [
-    [
-      "Home",
-      "index.html"
-    ],
-    [
-      "Episodes",
-      "episodes/"
-    ],
-    [
-      "Blog",
-      "https://blog.6stringcreative.com"
-    ],
-    [
-      "About",
-      "about/"
-    ],
-    [
-      "6stringcreative.com",
-      "https://www.6stringcreative.com"
-    ]
+  "logo": "assets/logo.png",
+  "cover": "assets/cover.jpg",
+  "cover_alt": "Marketing Tune-Up show cover, with hosts Dan and Kate",
+  "hero": "assets/hero-studio.png",
+  "hero_alt": "Dan and Kate at the studio desk, with the on-air sign lit",
+  "sprites": {
+    "dan": "assets/sprites/dan-head.png",
+    "kate": "assets/sprites/kate-head.png",
+    "onair_on": "assets/sprites/onair-on.png",
+    "onair_off": "assets/sprites/onair-off.png"
+  },
+  "hosts": [
+    {"name": "Dan", "sprite": "dan"},
+    {"name": "Kate", "sprite": "kate"}
   ],
-  "cta_label": "Start the Conversation",
-  "cta_url": "https://6stringcreative.hbportal.co/schedule/69fb7a0676ba9b1a1d978e93",
+  "nav": [
+    ["Home", "index.html"],
+    ["Episodes", "episodes/"],
+    ["Blog", "https://blog.6stringcreative.com"],
+    ["About", "about/"],
+    ["6stringcreative.com", "https://www.6stringcreative.com"]
+  ],
+  "cta_label": "Free Google Profile Snapshot",
+  "cta_url": "https://6stringcreative.com",
+  "cta_title": "Free Google Profile Snapshot",
+  "cta_text": "We'll look at your Google listing and your reviews and show you what to fix first.",
   "main_url": "https://www.6stringcreative.com",
   "section": "episodes",
   "section_title": "All episodes",
   "read_label": "Episode details",
   "back_label": "Back to all episodes",
-  "all_label": "Browse all episodes",
-  "hero_eyebrow": "A 6 String Creative Podcast",
-  "hero_title": "Grow your biz without losing your mind.",
-  "hero_lede": "Practical, honest marketing conversations for local small business owners. No hype, no jargon, no treadmill.",
-  "hero_btn1": "Browse episodes",
-  "hero_btn2": "Work with us",
-  "hero_btn2_url": "https://6stringcreative.hbportal.co/schedule/69fb7a0676ba9b1a1d978e93",
-  "latest_eyebrow": "Newest episodes",
-  "latest_title": "Start listening",
-  "cta_title": "Stop guessing. Start growing.",
-  "cta_text": "Ready to build a marketing system that supports your business for years? Let's talk about your goals.",
+  "subscribe": [
+    {"label": "YouTube", "url": ""},
+    {"label": "Spotify", "url": ""},
+    {"label": "Apple Podcasts", "url": ""},
+    {"label": "RSS", "url": ""}
+  ],
+  "subscribe_pending": "YouTube, Spotify, Apple Podcasts, and RSS links are on the way.",
+  "episode_pending": "The video and listen links for this episode are on the way.",
+  "empty_episodes": "New episodes arrive every Tuesday at 11:30 AM ET.",
   "about": [
-    "Marketing Tune-Up is where we talk about marketing the way we practice it: honest guidance, clear strategy, and walking alongside small business owners as they grow.",
-    "6 String Creative is a small, relationship-driven team in Greenwood, Indiana helping local businesses with web design, social media, Google Business Profile, reviews, and local SEO."
+    "Marketing Tune-Up is a weekly show from 6 String Creative for small business owners trying to navigate the complex world of marketing. Each episode, Dan and Kate take one topic and break it down in about five minutes: what the research says, what actually works, and one fix you can make this week.",
+    "Dan and Kate are original AI characters. Every stat is real and credited, and the examples are anonymized composites. New episodes are published every Tuesday at 11:30 AM ET."
   ],
-  "footer_blurb": "You don't need another marketing task on your plate. You need a trusted partner and a clear plan that helps your business grow with confidence and consistency.",
+  "footer_blurb": "Five-minute marketing fixes for small business owners, every Tuesday, from 6 String Creative.",
   "social": [
-    [
-      "Facebook",
-      "https://www.facebook.com/6stringcreative"
-    ],
-    [
-      "Instagram",
-      "https://www.instagram.com/6stringcreative/"
-    ],
-    [
-      "LinkedIn",
-      "https://www.linkedin.com/company/6stringcreative"
-    ]
+    ["Facebook", "https://www.facebook.com/6stringcreative"],
+    ["Instagram", "https://www.instagram.com/6stringcreative/"],
+    ["LinkedIn", "https://www.linkedin.com/company/6stringcreative"]
   ],
-  "copyright": "\u00a9 2026 6 String Creative. Greenwood, IN."
+  "copyright": "© 2026 6 String Creative."
 }
