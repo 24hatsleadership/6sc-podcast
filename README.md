@@ -1,4 +1,4 @@
-# The 6 String Creative Podcast
+# Marketing Tune-Up
 
 Static site for **podcast.6stringcreative.com**, hosted on GitHub Pages.
 
