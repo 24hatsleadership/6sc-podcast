@@ -1,0 +1,69 @@
+{
+  "name": "The 6 String Creative Podcast",
+  "brand": "6 String Creative",
+  "base": "https://podcast.6stringcreative.com",
+  "theme_color": "#111f32",
+  "desc": "Honest, practical marketing conversations for small business owners who want to grow without losing their minds.",
+  "font_url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@500;700;800&display=swap",
+  "logo": "https://cloud-1de12d.becdn.net/media/original/d74c6fce1ecb6034b42393fc7db41541/6sc-Logo-Blue-White.png",
+  "nav": [
+    [
+      "Home",
+      "index.html"
+    ],
+    [
+      "Episodes",
+      "episodes/"
+    ],
+    [
+      "Blog",
+      "https://blog.6stringcreative.com"
+    ],
+    [
+      "About",
+      "about/"
+    ],
+    [
+      "6stringcreative.com",
+      "https://www.6stringcreative.com"
+    ]
+  ],
+  "cta_label": "Start the Conversation",
+  "cta_url": "https://6stringcreative.hbportal.co/schedule/69fb7a0676ba9b1a1d978e93",
+  "main_url": "https://www.6stringcreative.com",
+  "section": "episodes",
+  "section_title": "All episodes",
+  "read_label": "Episode details",
+  "back_label": "Back to all episodes",
+  "all_label": "Browse all episodes",
+  "hero_eyebrow": "The 6 String Creative Podcast",
+  "hero_title": "Grow your biz without losing your mind.",
+  "hero_lede": "Practical, honest marketing conversations for local small business owners. No hype, no jargon, no treadmill.",
+  "hero_btn1": "Browse episodes",
+  "hero_btn2": "Work with us",
+  "hero_btn2_url": "https://6stringcreative.hbportal.co/schedule/69fb7a0676ba9b1a1d978e93",
+  "latest_eyebrow": "Newest episodes",
+  "latest_title": "Start listening",
+  "cta_title": "Stop guessing. Start growing.",
+  "cta_text": "Ready to build a marketing system that supports your business for years? Let's talk about your goals.",
+  "about": [
+    "The 6 String Creative Podcast is where we talk about marketing the way we practice it: honest guidance, clear strategy, and walking alongside small business owners as they grow.",
+    "6 String Creative is a small, relationship-driven team in Greenwood, Indiana helping local businesses with web design, social media, Google Business Profile, reviews, and local SEO."
+  ],
+  "footer_blurb": "You don't need another marketing task on your plate. You need a trusted partner and a clear plan that helps your business grow with confidence and consistency.",
+  "social": [
+    [
+      "Facebook",
+      "https://www.facebook.com/6stringcreative"
+    ],
+    [
+      "Instagram",
+      "https://www.instagram.com/6stringcreative/"
+    ],
+    [
+      "LinkedIn",
+      "https://www.linkedin.com/company/6stringcreative"
+    ]
+  ],
+  "copyright": "\u00a9 2026 6 String Creative. Greenwood, IN."
+}
