@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Static site builder. Reads content/posts/*.md and site.json, writes dist/. No dependencies."""
 import os, re, html, shutil, glob, json
+import urllib.request
+import xml.etree.ElementTree as ET_XML
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 
@@ -204,6 +206,50 @@ def load_posts():
     posts.sort(key=lambda p: p["_dt"], reverse=True)
     return posts
 
+ITUNES = "{http://www.itunes.com/dtds/podcast-1.0.dtd}"
+
+def feed_audio():
+    """Map episode number and title to the mp3 enclosure in the published podcast feed.
+    Only published episodes are in the feed, so drafts get no player. Any failure means no players, not a failed build."""
+    url = CFG.get("audio_feed", "")
+    if not url:
+        return {}, {}
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "podcast-site-build"})
+        root = ET_XML.fromstring(urllib.request.urlopen(req, timeout=20).read())
+    except Exception as e:
+        print(f"audio feed unavailable, building without feed audio: {e}")
+        return {}, {}
+    season = str(CFG.get("audio_feed_season", "1"))
+    by_ep, by_title = {}, {}
+    for item in root.iter("item"):
+        enc = item.find("enclosure")
+        src = safe_url(enc.get("url", "")) if enc is not None else ""
+        if not src.startswith("https://"):
+            continue
+        ep = (item.findtext(ITUNES + "episode") or "").strip()
+        se = (item.findtext(ITUNES + "season") or "").strip()
+        if ep and se == season:
+            by_ep.setdefault(ep, src)
+        title = (item.findtext("title") or "").strip().lower()
+        if title:
+            by_title.setdefault(title, src)
+    return by_ep, by_title
+
+def attach_audio(posts):
+    by_ep, by_title = feed_audio()
+    for p in posts:
+        if p["audio"]:
+            continue
+        src = by_ep.get(p["episode"], "")
+        if not src:
+            t = p["title"].lower()
+            src = next((u for k, u in by_title.items() if k.endswith(t)), "")
+        p["audio"] = src
+        if src:
+            print(f"audio from feed: episode {p['episode']}")
+    return posts
+
 def live_posts(posts):
     now = clock()
     live, skipped = [], []
@@ -393,7 +439,12 @@ def home_html(posts):
 {hosts_html("")}
 {subscribe_html()}
 </div></div></div></section>"""
-    latest = f'<section class="band" id="episodes"><div class="wrap"><p class="pixel">Newest first</p><h2>Episodes</h2><div class="grid">{grid}</div></div></section>'
+    player = ""
+    if posts and posts[0]["audio"]:
+        p = posts[0]
+        player = (f'<figure class="audio"><figcaption>Listen to the latest episode: {E(p["title"])}</figcaption>'
+                  f'<audio controls preload="none" src="{E(p["audio"])}"></audio></figure>')
+    latest = f'<section class="band" id="episodes"><div class="wrap"><p class="pixel">Newest first</p><h2>Episodes</h2>{player}<div class="grid">{grid}</div></div></section>'
     return hero + latest + cta_html()
 
 def episode_html(p, live, prefix):
@@ -444,6 +495,7 @@ def main():
         shutil.rmtree(OUT)
     shutil.copytree(os.path.join(ROOT, "assets"), os.path.join(OUT, "assets"))
     posts, skipped = live_posts(load_posts())
+    attach_audio(posts)
     sec = CFG["section"]
     cover = {"src": CFG["cover"], "alt": CFG["cover_alt"], "width": 1400, "height": 1400}
     write("index.html", layout(CFG["name"], CFG["desc"], "", home_html(posts), image=cover, extra_head=series_ld()))

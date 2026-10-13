@@ -8,6 +8,8 @@
   "font_url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@500;700;800&display=swap",
   "logo": "assets/logo.png",
   "cover": "assets/cover.jpg",
+  "audio_feed": "https://media.rss.com/marketing-tune-up/feed.xml",
+  "audio_feed_season": "1",
   "cover_alt": "Marketing Tune-Up show cover, with hosts Dan and Kate",
   "hero": "assets/hero-studio.png",
   "hero_alt": "Dan and Kate at the studio desk, with the on-air sign lit",
