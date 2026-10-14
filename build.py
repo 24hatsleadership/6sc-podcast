@@ -311,9 +311,17 @@ def card(p, prefix="", live=False):
         f'<a class="more" href="{href}">{E(CFG["read_label"])}</a></div></article>'
     )
 
+def subscribe_pairs():
+    pairs = []
+    for item in CFG.get("subscribe", []):
+        url = safe_url(item.get("url", ""))
+        label = (item.get("label") or "").strip()
+        if label and url:
+            pairs.append((label, url))
+    return pairs
+
 def subscribe_html():
-    pairs = [(item["label"], item.get("url", "")) for item in CFG["subscribe"]]
-    row = buttons(pairs, "btn")
+    row = buttons(subscribe_pairs(), "btn")
     if row:
         return f'<div class="subscribe"><h2>Listen and subscribe</h2><p class="actions">{row}</p></div>'
     return (
@@ -387,7 +395,8 @@ def layout(title, desc, path, body, prefix="", og_type="website", image=None, ex
         f'<a href="{href if href.startswith("http") else prefix + href}">{E(label)}</a>'
         for label, href in CFG["nav"]
     )
-    soc = "".join(f'<a href="{E(u)}" rel="noopener">{E(l)}</a>' for l, u in CFG["social"])
+    sub = "".join(f'<a href="{E(u)}" rel="noopener">{E(l)}</a>' for l, u in subscribe_pairs())
+    soc = sub + "".join(f'<a href="{E(u)}" rel="noopener">{E(l)}</a>' for l, u in CFG["social"])
     canon = canon_for(path)
     full_title = title if title == CFG["name"] else f'{title} | {CFG["name"]}'
     desc = " ".join((desc or "").split())

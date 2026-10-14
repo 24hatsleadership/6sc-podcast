@@ -44,7 +44,7 @@ Show-level listen links live in `site.json` under `subscribe`. Each entry has a 
 
 | Label | Paste this when it exists |
 | --- | --- |
-| YouTube | The YouTube channel URL |
+| Subscribe on YouTube | The YouTube channel URL, with `?sub_confirmation=1` |
 | Spotify | The show URL on Spotify |
 | Apple Podcasts | The show URL on Apple Podcasts |
 | RSS | The podcast RSS URL. The site also writes `/rss.xml`. Point this at that feed, or at your podcast host, once you want the button. |
