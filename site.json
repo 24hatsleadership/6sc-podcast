@@ -41,9 +41,9 @@
   "back_label": "Back to all episodes",
   "subscribe": [
     {"label": "Subscribe on YouTube", "url": "https://www.youtube.com/@marketing-tune-up?sub_confirmation=1"},
-    {"label": "Spotify", "url": ""},
-    {"label": "Apple Podcasts", "url": ""},
-    {"label": "RSS", "url": ""}
+    {"label": "Spotify", "url": "https://open.spotify.com/show/27aJV7smROtskQtgjGDIK7"},
+    {"label": "Apple Podcasts", "url": "https://podcasts.apple.com/us/podcast/marketing-tune-up/id1849007216"},
+    {"label": "RSS", "url": "https://media.rss.com/marketing-tune-up/feed.xml"}
   ],
   "subscribe_pending": "YouTube, Spotify, Apple Podcasts, and RSS links are on the way.",
   "episode_pending": "The video and listen links for this episode are on the way.",
